@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: $color-background;
+}
+
+nav {
+  margin: 0;
+}
+
+hr {
+  margin: 25px 0;
+  border: 0;
+  height: 1px;
+  background-color: $color-border;
+}

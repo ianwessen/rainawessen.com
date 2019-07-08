@@ -1,0 +1,112 @@
+$grid-base: 12;
+$one-col-width: 8.333333333333333%;
+
+.flex,
+.flex-center-x,
+.flex-center-y,
+.flex-center-xy {
+  display: flex;
+}
+
+.flex-center-x {
+  justify-content: center;
+}
+
+.flex-center-y {
+  align-items: center;
+}
+
+.flex-center-xy {
+  @extend .flex-center-x;
+  @extend .flex-center-y;
+  height: 100%;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.container-reading {
+  width: $width-container-reading;
+}
+
+.container,
+.container-reading,
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.row {
+  @extend .flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.row.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.row > * {
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@for $i from 1 through $grid-base {
+  .col-xs-#{$i} {
+    width: $one-col-width * $i;
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  @for $i from 1 through $grid-base {
+    .col-sm-#{$i} {
+      width: $one-col-width * $i;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  @for $i from 1 through $grid-base {
+    .col-md-#{$i} {
+      width: $one-col-width * $i;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  @for $i from 1 through $grid-base {
+    .col-lg-#{$i} {
+      width: $one-col-width * $i;
+    }
+  }
+}

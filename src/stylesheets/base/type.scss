@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,400i,700');
+
+body {
+  font: 400 16px/1.6 $font-family-sans;
+  color: $color-text;
+
+  @include small-up {
+    font: 400 18px/1.3 $font-family-sans;
+  }
+}
+
+h1 {
+  font: 700 36px/1.2 $font-family-sans;
+
+  @include small-up {
+    font: 700 48px/1.2 $font-family-sans;
+  }
+}
+
+h2 {
+  font: 700 24px/1.2 $font-family-sans;
+
+  @include small-up {
+    font: 700 36px/1.2 $font-family-sans;
+  }
+}
+
+h3 {
+  font: 700 21px/1.3 $font-family-sans;
+
+  @include small-up {
+    font: 700 24px/1.2 $font-family-sans;
+  }
+}
+
+h4 {
+  font: 700 18px/1.3 $font-family-sans;
+
+  @include small-up {
+    font: 700 21px/1.3 $font-family-sans;
+  }
+}
+
+h5 {
+  font: 700 16px/1.3 $font-family-sans;
+
+  @include small-up {
+    font: 700 18px/1.3 $font-family-sans;
+  }
+}
+
+h6 {
+  font: 700 14px/1.3 $font-family-sans;
+
+  @include small-up {
+    font: 700 14px/1.3 $font-family-sans;
+  }
+}
+
+p {
+  font: 300 16px/1.6 $font-family-sans;
+
+  @include small-up {
+    font: 300 18px/1.7 $font-family-sans;
+  }
+}
+
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title,
+h6.title {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 700;
+}
+
+blockquote {
+  padding: 20px;
+  border-left: 1px solid $color-primary;
+
+  > p {
+    font-size: 22px;
+    font-style: italic;
+    font-family: $font-family-serif;
+    margin: 0 0 1em;
+  }
+
+  > label {
+    font-size: 14px;
+    font-family: $font-family-sans;
+    text-transform: uppercase;
+    color: $color-primary;
+  }
+
+  @include medium-up {
+    padding: 20px 40px;
+  }
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: $font-family-mono;
+}
+
+a {
+  color: $forest;
+
+  &:hover {
+    color: darken($forest, 10%);
+  }
+}

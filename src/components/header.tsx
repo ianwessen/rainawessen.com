@@ -6,32 +6,19 @@ interface HeaderProps {
 }
 
 const Header: React.SFC<HeaderProps> = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: '40rem',
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+  <section className="header">
+    <div className="container-reading">
+      <Link
+        to="/"
+        style={{
+          color: 'white',
+          textDecoration: 'none',
+        }}
+      >
+        {siteTitle}
+      </Link>
     </div>
-  </div>
+  </section>
 )
 
 Header.defaultProps = {

@@ -3,6 +3,8 @@ import * as React from 'react'
 
 import Header from './header'
 
+import '../stylesheets/index.scss';
+
 const Layout: React.SFC = ({ children }) => (
   <StaticQuery
     query={graphql`
