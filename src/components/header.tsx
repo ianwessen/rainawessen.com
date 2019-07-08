@@ -8,15 +8,7 @@ interface HeaderProps {
 const Header: React.SFC<HeaderProps> = ({ siteTitle }) => (
   <section className="header">
     <div className="container-reading">
-      <Link
-        to="/"
-        style={{
-          color: 'white',
-          textDecoration: 'none',
-        }}
-      >
-        {siteTitle}
-      </Link>
+      <Link to="/">{siteTitle}</Link>
     </div>
   </section>
 )
