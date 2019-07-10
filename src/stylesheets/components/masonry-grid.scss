@@ -1,0 +1,27 @@
+.masonry-grid {
+  display: flex;
+
+  &__column {
+    padding: 0 20px;
+    border: 1px solid red;
+    flex: 0 0 100%;
+
+    @include small-up {
+      flex: 0 0 50%;
+    }
+    @include medium-up {
+      flex: 0 0 33.333%;
+    }
+  }
+
+  &__item {
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    max-height: 500px;
+    object-fit: contain;
+  }
+}

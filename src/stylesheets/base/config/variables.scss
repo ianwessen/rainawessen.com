@@ -10,7 +10,7 @@ $dodger-blue: #1e90ff;
 $cloud: #c9c9c9;
 
 $charcoal: #0D070A;
-$slate: #253B40;
+$slate: #151c23;
 $forest: #A69665;
 $mustard: #D9985F;
 $bark: #8C513B;
@@ -20,15 +20,16 @@ $color-github: #bd2c00;
 $color-linkedin: #0077b5;
 $color-spotify: #1db954;
 
-$font-family-sans: 'Alegreya Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-$font-family-serif: 'Alegreya', 'Georgia', sans-serif;
+$font-family-sans: 'Poppins', 'Alegreya Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+$font-family-serif: 'Eczar', 'Georgia', sans-serif;
 $font-family-mono: 'Cousine', Menlo, consolas, mono;
 
-$color-text: $slate;
-$color-background: $white;
+$color-text: $white;
+$color-background: $slate;
 
 $color-primary: $forest;
 $color-primary-background: rgba($red, 0.15);
+$color-secondary: $mustard;
 $color-text-strong: $slate;
 $color-border: $cloud;
 $color-background-light: lighten($cloud, 16%);

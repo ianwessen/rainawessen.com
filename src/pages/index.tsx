@@ -17,78 +17,66 @@ interface PostNode {
   }
 }
 
-interface IndexPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        siteName: string
-      }
-    }
-    allMarkdownRemark: {
-      edges: PostNode[]
-    }
-  }
-}
+interface IndexPageProps {}
+
+const images1 = [
+  {src: 'http://www.fillmurray.com/190/300'},
+  {src: 'http://www.fillmurray.com/220/800'},
+  {src: 'http://www.fillmurray.com/900/300'},
+  {src: 'http://www.fillmurray.com/970/700'},
+  {src: 'http://www.fillmurray.com/630/1200'},
+  {src: 'http://www.fillmurray.com/280/300'},
+  {src: 'http://www.fillmurray.com/680/300'},
+  {src: 'http://www.fillmurray.com/860/600'},
+]
+const images2 = [
+  {src: 'http://www.fillmurray.com/220/300'},
+  {src: 'http://www.fillmurray.com/240/300'},
+  {src: 'http://www.fillmurray.com/660/240'},
+  {src: 'http://www.fillmurray.com/210/900'},
+  {src: 'http://www.fillmurray.com/250/540'},
+  {src: 'http://www.fillmurray.com/490/300'},
+  {src: 'http://www.fillmurray.com/300/400'},
+  {src: 'http://www.fillmurray.com/683/500'},
+  {src: 'http://www.fillmurray.com/685/700'},
+]
+const images3 = [
+  {src: 'http://www.fillmurray.com/490/800'},
+  {src: 'http://www.fillmurray.com/660/600'},
+  {src: 'http://www.fillmurray.com/274/700'},
+  {src: 'http://www.fillmurray.com/630/1200'},
+  {src: 'http://www.fillmurray.com/222/300'},
+  {src: 'http://www.fillmurray.com/146/300'},
+  {src: 'http://www.fillmurray.com/400/834'},
+]
 
 class IndexPage extends React.Component<IndexPageProps, {}> {
   render() {
-    const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
+        let childElements = (elements) => elements.map(function(element, index){
+           return (
+                <div key={index} className="masonry-grid__item">
+                    <img className="masonry-grid__image" src={element.src} />
+                </div>
+            );
+        });
 
-    return (
-      <Layout>
-        <SEO
-          title="All posts"
-          keywords={['blog', 'gatsby', 'javascript', 'react']}
-        />
-        <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-          <Image />
-        </div>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: '0.25rem',
-                }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
-      </Layout>
-    )
-  }
+    
+        return (
+          <Layout>
+            <section className="masonry-grid">
+              <div className="masonry-grid__column">
+                {childElements(images1)}
+              </div>
+              <div className="masonry-grid__column">
+                {childElements(images2)}
+              </div>
+              <div className="masonry-grid__column">
+                {childElements(images3)}
+              </div>
+            </section>
+          </Layout>
+        );
+    }
 }
 
 export default IndexPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`
