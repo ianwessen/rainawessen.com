@@ -16,7 +16,7 @@
     "typescript"
   ],
   "dependencies": {
-    "gatsby": "^2.13.7",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
